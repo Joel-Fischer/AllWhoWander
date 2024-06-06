@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+}
+
+.logo {
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 1em;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 2em;
+}
+
+.interactive-map {
+    position: relative;
+    width: 80%;
+    height: 60vh;
+    background-color: #e0e0e0;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.map-item {
+    position: absolute;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #333;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.map-item:hover {
+    transform: scale(1.1);
+}
+
+.item1 {
+    top: 10%;
+    left: 30%;
+}
+
+.item2 {
+    top: 20%;
+    right: 20%;
+}
+
+.item3 {
+    bottom: 15%;
+    left: 20%;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
