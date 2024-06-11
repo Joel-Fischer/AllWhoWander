@@ -7,6 +7,8 @@ routes:
 
 
     user / profile routes:
+        login 
+        logout
         
 
     search routes:
