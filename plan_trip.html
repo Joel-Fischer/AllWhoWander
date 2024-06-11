@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Planning - All Who Wander</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body class="flex flex-col min-h-screen font-sans bg-ivory text-charcoal">
+    <header class="bg-oceanBlue text-white p-4 md:hidden">
+        <div class="flex justify-between items-center">
+            <div class="logo text-xl">Logo</div>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="text-white hover:text-oldPaper">Home</a></li>
+                    <li><a href="#" class="text-white hover:text-oldPaper">About</a></li>
+                    <li><a href="#" class="text-white hover:text-oldPaper">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="flex flex-1">
+        <aside class="w-64 bg-slateGray text-white p-4 hidden md:block">
+            <nav>
+                <ul class="space-y-4">
+                    <li><a href="index.html" class="block text-white hover:text-oldPaper">Home</a></li>
+                    <li><a href="#" class="block text-white hover:text-oldPaper">Plan Trip</a></li>
+                    <li><a href="#" class="block text-white hover:text-oldPaper">My Trips</a></li>
+                    <li><a href="#" class="block text-white hover:text-oldPaper">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="flex-1 bg-ivory p-8">
+            <h1 class="text-3xl font-bold mb-4">Plan Your Trip</h1>
+            <!-- Trip planning content goes here -->
+            <form>
+                <div class="mb-4">
+                    <label for="destination" class="block text-charcoal mb-2">Destination</label>
+                    <input type="text" id="destination" class="w-full p-2 border border-chocolateBrown rounded" placeholder="Enter your destination">
+                </div>
+                <div class="mb-4">
+                    <label for="startDate" class="block text-charcoal mb-2">Start Date</label>
+                    <input type="date" id="startDate" class="w-full p-2 border border-chocolateBrown rounded">
+                </div>
+                <div class="mb-4">
+                    <label for="endDate" class="block text-charcoal mb-2">End Date</label>
+                    <input type="date" id="endDate" class="w-full p-2 border border-chocolateBrown rounded">
+                </div>
+                <button type="submit" class="w-full bg-oceanBlue text-white p-2 rounded hover:bg-goldenYellow transition">Create Trip</button>
+            </form>
+        </main>
+    </div>
+
+    <footer class="bg-oceanBlue text-white text-center p-4">
+        <p>&copy; 2024 -- All Who Wander</p>
+    </footer>
+
+    <!-- JS scripting here -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        oceanBlue: '#3B6E8F',
+                        sandBeige: '#D4B18A',
+                        forestGreen: '#4B6B47',
+                        goldenYellow: '#F3C623',
+                        rustyRed: '#A64242',
+                        mutedBrown: '#7B5E57',
+                        chocolateBrown: '#7B3F00',
+                        lightBrown: '#A67C52',
+                        parchment: '#E9DDC9',
+                        oldPaper: '#F2E6CE',
+                        antiqueWhite: '#FAEBD7',
+                        ivory: '#F8F4E3',
+                        slateGray: '#6C7A89',
+                        charcoal: '#2D2D2D',
+                        softWhite: '#FDFDFD',
+                        softYellow: '#FFF8DC',
+                    },
+                }
+            },
+        }
+    </script>
+
+    <script src="./assets/JS/script.js"></script>
+</body>
+</html>
