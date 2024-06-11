@@ -2,6 +2,7 @@ const User = require('./User');
 const Trip = require('./Trip');
 const Location = require('./Location');
 const Activity = require('./Activity');
+const Junction = require('./Junction');
 
 /* 
 User
@@ -37,17 +38,23 @@ Trip.belongsTo(User, {
   foreignKey: 'user_id'
 })
 
-Trip.hasMany(Location, {
-  foreignKey: 'trip_id', 
-})
+Trip.belongsToMany(Location, {
+  through: {
+    model: Junction,
+    unique: false
+  }
+});
 
 Trip.hasMany(Activity, {
   foreignKey: 'trip_id', 
   onDelete: 'CASCADE'
 });
 
-Location.belongsTo(Trip, {
-  foreignKey: 'trip_id'
+Location.belongsToMany(Trip, {
+  through: {
+    model: Junction, 
+    unique: false
+  }
 });
 
 Location.hasMany(Activity, {
