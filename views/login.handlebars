@@ -1,42 +1,26 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
 
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
+{{#extends 'layouts/main'}}
+  {{#block 'title'}}Login - All Who Wander{{/block}}
 
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
-      </div>
-      <div class="form-group">
-        <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
-  </div>
-</div>
+  {{!-- login page content --}}
+  {{#block 'body'}}
+    <div class="max-w-sm w-full bg-softWhite p-8 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold mb-4">Login</h2>
+        <form>
+            <div class="mb-4">
+                <label for="email" class="block text-charcoal mb-2">Email</label>
+                <input type="email" id="email" class="w-full p-2 border border-chocolateBrown rounded" placeholder="Enter your email">
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block text-charcoal mb-2">Password</label>
+                <input type="password" id="password" class="w-full p-2 border border-chocolateBrown rounded" placeholder="Enter your password">
+            </div>
+            <button type="submit" class="w-full bg-oceanBlue text-white p-2 rounded hover:bg-goldenYellow transition">Login</button>
+        </form>
+    </div>
+  {{/block}}
 
-<script src="./js/login.js"></script>
+  {{!--scripts --}}
+  {{#block 'scripts'}}
+  {{/block}}
+{{/extends}}
