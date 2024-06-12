@@ -1,44 +1,40 @@
+{{!-- views/layouts/main.handlebars --}}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    {{{head}}}
 </head>
-
-<body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
+<body class="flex flex-col min-h-screen font-sans bg-ivory text-charcoal">
+    <header class="flex justify-between items-center bg-oceanBlue text-white p-4">
+        <div class="logo text-xl">Logo</div>
+        <nav class="hidden md:flex">
+            <ul class="flex space-x-4">
+                <li><a href="/" class="text-white hover:text-oldPaper">Home</a></li>
+                <li><a href="#" class="text-white hover:text-oldPaper">About</a></li>
+                <li><a href="#" class="text-white hover:text-oldPaper">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
 
-  <!-- Render script for logged in users only -->
+    <main class="flex flex-1 justify-center items-center bg-ivory p-8">
+        {{{body}}}
+    </main>
+
+    <footer class="bg-oceanBlue text-white text-center p-4">
+        <p>&copy; 2024 -- All Who Wander</p>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    {{{scripts}}}
+    <script src="/assets/JS/script.js"></script>
+    <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
-
 </html>
