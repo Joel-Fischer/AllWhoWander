@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
-    <link rel="stylesheet" href="/assets/style.css">
-    {{{head}}}
+    <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body class="flex flex-col min-h-screen font-sans bg-ivory text-charcoal">
     <header class="flex justify-between items-center bg-oceanBlue text-white p-4">
         <div class="logo text-xl">Logo</div>
@@ -20,21 +20,49 @@
         </nav>
     </header>
 
-    <main class="flex flex-1 justify-center items-center bg-ivory p-8">
-        {{{body}}}
-    </main>
+    {{{body}}}
+
 
     <footer class="bg-oceanBlue text-white text-center p-4">
         <p>&copy; 2024 -- All Who Wander</p>
     </footer>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    {{{scripts}}}
-    <script src="/assets/JS/script.js"></script>
-    <!-- Render script for logged in users only -->
+
+
+  <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+
+  <!--  js scripting here-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      oceanBlue: '#3B6E8F',
+                      sandBeige: '#D4B18A',
+                      forestGreen: '#4B6B47',
+                      goldenYellow: '#F3C623',
+                      rustyRed: '#A64242',
+                      mutedBrown: '#7B5E57',
+                      chocolateBrown: '#7B3F00',
+                      lightBrown: '#A67C52',
+                      parchment: '#E9DDC9',
+                      oldPaper: '#F2E6CE',
+                      antiqueWhite: '#FAEBD7',
+                      ivory: '#F8F4E3',
+                      slateGray: '#6C7A89',
+                      charcoal: '#2D2D2D',
+                      softWhite: '#FDFDFD',
+                      softYellow: '#FFF8DC',
+                  },
+              }
+          },
+      }
+  </script>
+
 </body>
 </html>

@@ -1,5 +1,7 @@
 # ALllWhoWander
 
+Removed withAuth from api routes in order to test them 
+
 routes: 
 
     home routes:

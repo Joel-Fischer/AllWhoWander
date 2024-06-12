@@ -3,7 +3,7 @@ const { Location } = require('../../models')
 const withAuth = require('../../utils/auth');
 
 // Get all locations
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const locationData = await Location.findAll();
 
@@ -17,7 +17,7 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 // Create a location 
-route.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const newLocation = await Location.create({
             ...req.body,
@@ -31,7 +31,7 @@ route.post('/', withAuth, async (req, res) => {
 });
 
 // Update a location - this still needs work, not entirely sure on it 
-route.post('/:id', withAuth, async (req, res) => {
+router.post('/:id', async (req, res) => {
     try {
         const updateLocation = await Location.update({
             set: {},
@@ -51,7 +51,7 @@ route.post('/:id', withAuth, async (req, res) => {
 });
 
 // Delete a location
-router.delete('/:id',  withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         const locationData = await Location.destroy({
             where: {

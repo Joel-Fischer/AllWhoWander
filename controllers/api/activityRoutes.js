@@ -3,7 +3,7 @@ const { Activity } = require('../../models')
 const withAuth = require('../../utils/auth');
 
 // Get all of a user's activities 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const activityData = await Activity.findAll({
             where: {
@@ -21,7 +21,7 @@ router.get('/', withAuth, async (req, res) => {
 })
 
 // Get a specific activity 
-router.get('/:id', withAuth, async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
 
         const activityData = await Activity.findByPK(req.params.id, {
@@ -45,7 +45,7 @@ router.get('/:id', withAuth, async (req, res) => {
 });
 
 // Create an activity
-route.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const newActivity = await Activity.create({
             ...req.body,
@@ -59,7 +59,7 @@ route.post('/', withAuth, async (req, res) => {
 });
 
 // Update an activity - this still needs work, not entirely sure on it 
-route.post('/:id', withAuth, async (req, res) => {
+router.post('/:id', async (req, res) => {
     try {
         const updateActivity = await Activity.update({
             set: {},
@@ -79,7 +79,7 @@ route.post('/:id', withAuth, async (req, res) => {
 });
 
 // Delete an activity 
-router.delete('/:id',  withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         const activityData = await Activity.destroy({
             where: {

@@ -1,41 +1,7 @@
-{{!-- homepage / landing page --}}
-{{#extends 'layouts/main'}}
-  {{#block 'title'}}Home - All Who Wander{{/block}}
-
-  {{#block 'body'}}
-    <div class="relative w-full h-[calc(100vh-12rem)] border-2 border-chocolateBrown rounded-lg overflow-hidden fantasy-map">
-        <a href="/" class="map-item item1 absolute top-[10%] left-[30%] p-4 bg-softWhite bg-opacity-80 border border-charcoal cursor-pointer transition-transform transform hover:scale-110 hover:bg-oldPaper">(Link here)</a>
-        <a href="plan_trip" class="map-item item2 absolute top-[20%] right-[20%] p-4 bg-softWhite bg-opacity-80 border border-charcoal cursor-pointer transition-transform transform hover:scale-110 hover:bg-oldPaper">Plan Your Adventure</a>
-        <a href="/" class="map-item item3 absolute bottom-[15%] left-[20%] p-4 bg-softWhite bg-opacity-80 border border-charcoal cursor-pointer transition-transform transform hover:scale-110 hover:bg-oldPaper">(Link here)</a>
-    </div>
-  {{/block}}
-
-  {{#block 'scripts'}}
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        oceanBlue: '#3B6E8F',
-                        sandBeige: '#D4B18A',
-                        forestGreen: '#4B6B47',
-                        goldenYellow: '#F3C623',
-                        rustyRed: '#A64242',
-                        mutedBrown: '#7B5E57',
-                        chocolateBrown: '#7B3F00',
-                        lightBrown: '#A67C52',
-                        parchment: '#E9DDC9',
-                        oldPaper: '#F2E6CE',
-                        antiqueWhite: '#FAEBD7',
-                        ivory: '#F8F4E3',
-                        slateGray: '#6C7A89',
-                        charcoal: '#2D2D2D',
-                        softWhite: '#FDFDFD',
-                        softYellow: '#FFF8DC',
-                    },
-                }
-            },
-        }
-    </script>
-  {{/block}}
-{{/extends}}
+    <main class="flex flex-1 justify-center items-center bg-ivory p-8">
+        <div class="relative w-full h-[calc(100vh-12rem)] border-2 border-chocolateBrown rounded-lg overflow-hidden fantasy-map">
+            <a href="/"" class="map-item item1 absolute top-[10%] left-[30%] p-4 bg-softWhite bg-opacity-80 border border-charcoal cursor-pointer transition-transform transform hover:scale-110 hover:bg-oldPaper">(Link here)</a>
+            <a href="plan_trip.html" class="map-item item2 absolute top-[20%] right-[20%] p-4 bg-softWhite bg-opacity-80 border border-charcoal cursor-pointer transition-transform transform hover:scale-110 hover:bg-oldPaper">Plan Your Adventure</a>
+            <a href="/"" class="map-item item3 absolute bottom-[15%] left-[20%] p-4 bg-softWhite bg-opacity-80 border border-charcoal cursor-pointer transition-transform transform hover:scale-110 hover:bg-oldPaper">(Link here)</a>
+        </div>
+    </main>
