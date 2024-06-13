@@ -30,13 +30,17 @@ router.post('/', async (req, res) => {
     }
 });
 
-// Update a location - this still needs work, not entirely sure on it 
-router.post('/:id', async (req, res) => {
+// Update a location
+router.put('/:id', async (req, res) => {
     try {
-        const updateLocation = await Location.update({
-            set: {},
-            where: {},
-        });
+        const updateLocation = await Location.update(            
+            {
+                ...req.body
+            },
+            {
+            where: { id: req.params.id }
+            },
+        );
 
         if (!updateLocation){
             res.status(404).json({ message: 'No location found with this id!' });

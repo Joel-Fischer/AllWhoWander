@@ -58,13 +58,17 @@ router.post('/', async (req, res) => {
     }
 });
 
-// Update an activity - this still needs work, not entirely sure on it 
-router.post('/:id', async (req, res) => {
+// Update an activity
+router.put('/:id', async (req, res) => {
     try {
-        const updateActivity = await Activity.update({
-            set: {},
-            where: {},
-        });
+        const updateActivity = await Activity.update(
+            {
+                ...req.body,
+            },
+            {
+                where: { id: req.params.id },
+            },
+        );
 
         if (!updateActivity){
             res.status(404).json({ message: 'No activity found with this id!' });
