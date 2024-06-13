@@ -1,0 +1,35 @@
+/* assets/style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg-banner {
+    background-image: url('../assets/images/banner.jpg');
+}
+
+.box1 {
+    background-image: url(''); 
+}
+
+.box2 {
+    background-image: url(''); 
+}
+
+.box3 {
+    background-image: url(''); 
+}
+
+.box4 {
+    background-image: url(''); 
+}
+
+.box5 {
+    background-image: url(''); 
+}
+
+.box6 {
+    background-image: url(''); 
+}
