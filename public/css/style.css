@@ -7,29 +7,29 @@
 }
 
 .bg-banner {
-    background-image: url('../assets/images/banner.jpg');
+    background-image: url('/assets/images/banner.jpg');
 }
 
 .box1 {
-    background-image: url('../assets/images/nav1.png'); 
+    background-image: url('/assets/images/nav1.png'); 
 }
 
 .box2 {
-    background-image: url('../assets/images/nav2.png'); 
+    background-image: url('/assets/images/nav2.png'); 
 }
 
 .box3 {
-    background-image: url('../assets/images/nav3.png'); 
+    background-image: url('/assets/images/nav3.png'); 
 }
 
 .box4 {
-    background-image: url('../assets/images/nav4.png'); 
+    background-image: url('/assets/images/nav4.png'); 
 }
 
 .box5 {
-    background-image: url('../assets/images/nav5.png'); 
+    background-image: url('/assets/images/nav5.png'); 
 }
 
 .box6 {
-    background-image: url('../assets/images/nav6.png'); 
+    background-image: url('/assets/images/nav6.png'); 
 }
