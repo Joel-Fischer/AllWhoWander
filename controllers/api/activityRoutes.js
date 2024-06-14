@@ -37,7 +37,7 @@ router.get('/:id', withAuth, async (req, res) => {
 
         const activity = activityData.get({ plain: true });
 
-        return activity;
+        res.status(200).json(activity);
 
     } catch (err) {
         res.status(400).json(err);
