@@ -13,7 +13,7 @@ router.get('/', withAuth, async (req, res) => {
 
         const trips = tripData.map((trip) => trip.get({ plain: true }));
 
-        return trips;
+        res.status(200).json(trips);
 
     } catch (err) {
         res.status(400).json(err);
@@ -36,7 +36,7 @@ router.get('/:id', withAuth, async (req, res) => {
 
         const trip = tripData.get({ plain: true });
 
-        return trip;
+        res.status(200).json(trip);
 
     } catch (err) {
         res.status(400).json(err);

@@ -9,7 +9,7 @@ router.get('/', withAuth, async (req, res) => {
 
         const locations = locationData.map((location) => location.get({ plain: true }));
 
-        return locations;
+        res.status(200).json(locations);
 
     } catch (err) {
         res.status(400).json(err);

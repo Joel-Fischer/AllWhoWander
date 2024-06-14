@@ -7,6 +7,6 @@ const userRoutes = require('./userRoutes');
 router.use('/activity', activityRoutes);
 router.use('/location', locationRoutes);
 router.use('/trip', tripRoutes);
-router.use('/users', userRoutes);
+router.use('/user', userRoutes);
 
 module.exports = router;
