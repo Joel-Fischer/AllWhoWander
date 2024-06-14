@@ -1,5 +1,41 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const withAuth = require('../../utils/auth');
+
+// Get all users
+router.get('/', async (req, res) => {
+
+  try {
+      const userData = await User.findAll();
+
+      const users = userData.map((user) => user.get({ plain: true }));
+
+      res.status(200).json(users);
+
+  } catch (err) {
+      res.status(400).json(err);
+  }
+})
+
+// Get a specific user 
+router.get('/:id', async (req, res) => {
+  try {
+
+      const userData = await User.findByPK(req.params.id);
+
+      if (!userData){
+          res.status(404).json({ message: 'No user found with this id!' });
+          return;
+      }
+
+      const user = userData.get({ plain: true });
+
+      return user;
+
+  } catch (err) {
+      res.status(400).json(err);
+  }
+});
 
 // Create user
 router.post('/', async (req, res) => {
@@ -62,10 +98,21 @@ router.post('/logout', (req, res) => {
 });
 
 // // Delete User
-// router.delete('/', withAuth, async (req, res) => {
+router.delete('/', withAuth, async (req, res) => {
+  try {
+    const userData = await User.destroy({
+      where: {
+        id: req.params.id
+      }
+    });
 
-//   //delete user 
+    if(!userData){
+      
+    }
 
-// });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

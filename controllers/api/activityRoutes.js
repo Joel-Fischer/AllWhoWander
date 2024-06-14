@@ -3,7 +3,7 @@ const { Activity } = require('../../models')
 const withAuth = require('../../utils/auth');
 
 // Get all of a user's activities 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const activityData = await Activity.findAll({
             where: {
@@ -13,15 +13,15 @@ router.get('/', async (req, res) => {
 
         const activities = activityData.map((activity) => activity.get({ plain: true }));
 
-        return activities;
-
+        res.status(200).json(activities);
+        
     } catch (err) {
         res.status(400).json(err);
     }
-})
+});
 
 // Get a specific activity 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try {
 
         const activityData = await Activity.findByPK(req.params.id, {
@@ -45,7 +45,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Create an activity
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const newActivity = await Activity.create({
             ...req.body,
@@ -58,13 +58,17 @@ router.post('/', async (req, res) => {
     }
 });
 
-// Update an activity - this still needs work, not entirely sure on it 
-router.post('/:id', async (req, res) => {
+// Update an activity
+router.put('/:id', withAuth, async (req, res) => {
     try {
-        const updateActivity = await Activity.update({
-            set: {},
-            where: {},
-        });
+        const updateActivity = await Activity.update(
+            {
+                ...req.body,
+            },
+            {
+                where: { id: req.params.id },
+            },
+        );
 
         if (!updateActivity){
             res.status(404).json({ message: 'No activity found with this id!' });
@@ -79,7 +83,7 @@ router.post('/:id', async (req, res) => {
 });
 
 // Delete an activity 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const activityData = await Activity.destroy({
             where: {

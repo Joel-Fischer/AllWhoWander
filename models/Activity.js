@@ -15,6 +15,12 @@ Activity.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        text: {
+            type: DataTypes.TEXT,
+        },
+        pic_url: {
+            type: DataTypes.STRING,
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {

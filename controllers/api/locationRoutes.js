@@ -3,7 +3,7 @@ const { Location } = require('../../models')
 const withAuth = require('../../utils/auth');
 
 // Get all locations
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const locationData = await Location.findAll();
 
@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 });
 
 // Create a location 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const newLocation = await Location.create({
             ...req.body,
@@ -30,13 +30,17 @@ router.post('/', async (req, res) => {
     }
 });
 
-// Update a location - this still needs work, not entirely sure on it 
-router.post('/:id', async (req, res) => {
+// Update a location
+router.put('/:id', withAuth, async (req, res) => {
     try {
-        const updateLocation = await Location.update({
-            set: {},
-            where: {},
-        });
+        const updateLocation = await Location.update(            
+            {
+                ...req.body
+            },
+            {
+            where: { id: req.params.id }
+            },
+        );
 
         if (!updateLocation){
             res.status(404).json({ message: 'No location found with this id!' });
@@ -51,7 +55,7 @@ router.post('/:id', async (req, res) => {
 });
 
 // Delete a location
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const locationData = await Location.destroy({
             where: {
