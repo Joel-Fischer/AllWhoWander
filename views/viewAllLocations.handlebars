@@ -1,0 +1,28 @@
+    <main class="flex-1 bg-ivory p-8">
+        <div class="flex items-center justify-center mb-8">
+            <div class="relative page-banner bg-cover bg-center h-48 w-full max-w-4xl rounded-lg shadow-lg">
+                <div class="absolute inset-0 bg-black bg-opacity-25 rounded-lg"></div>
+                <h2 class="relative z-10 text-5xl font-bold text-white drop-shadow-xl text-center flex items-center justify-center h-full">All Locations</h2>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto max-w-7xl">
+            <!-- CARD SNIPPET FOR LOCATIONS DATA SET -->
+            {{#each locations}}
+            <div class="max-w-sm rounded overflow-hidden shadow-lg mx-auto bg-softWhite border border-chocolateBrown">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2 text-charcoal" id="location-name">{{this.name}}</div>
+                    <p class="text-charcoal text-base" id="location-description">
+                        {{this.description}}
+                    </p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    
+        <div class="flex justify-center mt-8">
+            <a href="add_location.html" class="w-3/4 bg-oceanBlue text-white text-center py-4 rounded-lg shadow-lg hover:bg-goldenYellow transition">
+                Add Location
+            </a>
+        </div>
+    </main>
