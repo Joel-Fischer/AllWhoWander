@@ -15,7 +15,7 @@ Activity.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        text: {
+        description: {
             type: DataTypes.TEXT,
         },
         pic_url: {

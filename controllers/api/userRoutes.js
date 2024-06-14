@@ -3,8 +3,7 @@ const { User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Get all users
-router.get('/', async (req, res) => {
-
+router.get('/', withAuth, async (req, res) => {
   try {
       const userData = await User.findAll();
 
@@ -18,19 +17,29 @@ router.get('/', async (req, res) => {
 })
 
 // Get a specific user 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   try {
+      console.log(req.params.id)    ;
 
-      const userData = await User.findByPK(req.params.id);
+      // const userData = await User.findByPK(req.params.id);
+      // console.log(userData);
 
-      if (!userData){
+      const userData = await User.findAll({
+        where: {
+          id: req.params.id
+        }
+      });
+      console.log(userData);
+
+      const users = userData.map((user) => user.get({ plain: true }));
+      console.log(users);
+      
+      if (!users){
           res.status(404).json({ message: 'No user found with this id!' });
           return;
       }
 
-      const user = userData.get({ plain: true });
-
-      res.status(200).json(user);
+      res.status(200).json(users);
 
   } catch (err) {
       res.status(400).json(err);
@@ -97,8 +106,8 @@ router.post('/logout', (req, res) => {
   }
 });
 
-// // Delete User
-router.delete('/', withAuth, async (req, res) => {
+// Delete User
+router.delete('/delete/:id', withAuth, async (req, res) => {
   try {
     const userData = await User.destroy({
       where: {
@@ -106,9 +115,12 @@ router.delete('/', withAuth, async (req, res) => {
       }
     });
 
-    if(!userData){
-      
+    if (!userData){
+      res.status(404).json({ message: 'No user found with this id!' });
+      return;
     }
+
+    res.status(200).json(userData);
 
   } catch (err) {
     res.status(500).json(err);
