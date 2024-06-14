@@ -6,36 +6,30 @@
     box-sizing: border-box;
 }
 
-.banner {
-    background-image: url('assets/images/banner.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-.box {
-    position: relative;
-    background-size: cover;
-    background-position: center;
+.bg-banner {
+    background-image: url('../assets/images/banner.jpg');
 }
 
 .box1 {
-    background-image: url(''); 
+    background-image: url('../assets/images/nav1.png'); 
 }
 
 .box2 {
-    background-image: url(''); 
+    background-image: url('../assets/images/nav2.png'); 
 }
 
 .box3 {
-    background-image: url(''); 
+    background-image: url('../assets/images/nav3.png'); 
 }
 
-.overlay {
-    background-color: rgba(0, 0, 0, 0.5);
+.box4 {
+    background-image: url('../assets/images/nav4.png'); 
 }
 
-@media (max-width: 768px) {
-    .box {
-        height: 36vw; /* Adjust height for smaller screens */
-    }
+.box5 {
+    background-image: url('../assets/images/nav5.png'); 
+}
+
+.box6 {
+    background-image: url('../assets/images/nav6.png'); 
 }
