@@ -1,48 +1,68 @@
-<!-- do we still want a sidebar/aside section for the other pages? this is the template for that if so -->
-    <div class="flex flex-1">
-        <aside class="w-64 bg-slateGray text-white p-4 hidden md:block">
-            <nav>
-                <ul class="space-y-4">
-                    <li><a href="/" class="block text-white hover:text-oldPaper">Home</a></li>
-                    <li><a href="plan_trip.html" class="block text-white hover:text-oldPaper">Plan Trip</a></li>
-                    <li><a href="#" class="block text-white hover:text-oldPaper">My Trips</a></li>
-                    <li><a href="#" class="block text-white hover:text-oldPaper">Settings</a></li>
-                </ul>
-            </nav>
-        </aside>
-
-
-<!-- main content -->
-        <main class="flex-1 bg-ivory p-8">
-            <h1 class="text-3xl font-bold mb-4">Plan Your Adventure</h1>
-            
-            <!-- Trip planning content goes here -->
-            <form>
-                <div class="mb-4">
-                    <label for="destination" class="block text-charcoal mb-2">Destination</label>
-                    <input type="text" id="destination" class="w-full p-2 border border-chocolateBrown rounded" placeholder="Enter your destination">
+   <!-- main content -->
+    <main class="flex-1 bg-ivory p-8">
+        <h1 class="text-3xl font-bold mb-4">Plan Your Adventure</h1>
+        
+        <!-- Trip planning content goes here -->
+        <form>
+            <div class="mb-4">
+                <label for="destination" class="block text-charcoal mb-2">Destination</label>
+                <input type="text" id="destination" class="w-full p-2 border border-chocolateBrown rounded" placeholder="Enter your destination">
+            </div>
+            <div class="mb-4">
+                <label class="block text-charcoal mb-2">Select Dates</label>
+                <div class="flex items-center justify-between space-x-4">
+                    <div class="relative flex-1">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-charcoal" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                            </svg>
+                        </div>
+                        <input id="start-date" datepicker datepicker-autohide name="start" type="text" class="bg-softWhite border border-chocolateBrown text-charcoal text-sm rounded-lg focus:ring-goldenYellow focus:border-goldenYellow block w-full ps-10 p-2.5 datepicker-input" placeholder="Select date start">
+                    </div>
+                    <span class="mx-4 text-charcoal">to</span>
+                    <div class="relative flex-1">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-charcoal" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                            </svg>
+                        </div>
+                        <input id="end-date" datepicker datepicker-autohide name="end" type="text" class="bg-softWhite border border-chocolateBrown text-charcoal text-sm rounded-lg focus:ring-goldenYellow focus:border-goldenYellow block w-full ps-10 p-2.5 datepicker-input" placeholder="Select date end">
+                    </div>
                 </div>
-                <div class="mb-4">
-                    <label for="startDate" class="block text-charcoal mb-2">Start Date</label>
-                    <input type="text" id="startDate" class="datepicker-input w-full p-2 border border-chocolateBrown rounded" placeholder="Select start date">
-                </div>
-                <div class="mb-4">
-                    <label for="endDate" class="block text-charcoal mb-2">End Date</label>
-                    <input type="text" id="endDate" class="datepicker-input w-full p-2 border border-chocolateBrown rounded" placeholder="Select end date">
-                </div>
-                <button type="submit" class="w-full bg-oceanBlue text-white p-2 rounded hover:bg-goldenYellow transition">Create Trip</button>
-            </form>
-        </main>
+            </div>
+            <button type="submit" class="w-full bg-oceanBlue text-white p-2 rounded hover:bg-goldenYellow transition">Create Trip</button>
+        </form>
+    </main>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/@flowbite/datepicker@1.4.0/dist/datepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const datepickerInputs = document.querySelectorAll('.datepicker-input');
-            datepickerInputs.forEach(input => {
-                new Datepicker(input, {
-                    format: 'mm/dd/yyyy'
-                });
+            const startDateInput = document.getElementById('start-date');
+            const endDateInput = document.getElementById('end-date');
+
+            const startDatePicker = new Datepicker(startDateInput, {
+                format: 'mm/dd/yyyy',
+                autohide: true,
+                title: 'Start Date'
+            });
+
+            const endDatePicker = new Datepicker(endDateInput, {
+                format: 'mm/dd/yyyy',
+                autohide: true,
+                title: 'End Date'
             });
         });
     </script>
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            var menu = document.getElementById('menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
+
