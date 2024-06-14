@@ -3,7 +3,7 @@ const { Trip } = require('../../models')
 const withAuth = require('../../utils/auth');
 
 // Get all of a user's trips
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const tripData = await Trip.findAll({
             where: {
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 });
 
 // Get a specific trip 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try {
         const tripData = await Trip.findByPK(req.params.id, {
             where: {
@@ -44,7 +44,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Create a trip
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const newTrip = await Trip.create({
             ...req.body,
@@ -58,7 +58,7 @@ router.post('/', async (req, res) => {
 });
 
 // Update a trip
-router.post('/:id', async (req, res) => {
+router.post('/:id', withAuth, async (req, res) => {
     try {
         const updateTrip = await Trip.update(
             {
@@ -82,7 +82,7 @@ router.post('/:id', async (req, res) => {
 });
 
 // Delete a trip
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const tripData = await Trip.destroy({
             where: {
