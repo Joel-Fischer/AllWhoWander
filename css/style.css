@@ -11,25 +11,46 @@
 }
 
 .box1 {
-    background-image: url(''); 
+    background-image: url('../assets/images/nav1.png'); 
 }
 
 .box2 {
-    background-image: url(''); 
+    background-image: url('../assets/images/nav2.png'); 
 }
 
 .box3 {
-    background-image: url(''); 
+    background-image: url('../assets/images/nav3.png'); 
 }
 
 .box4 {
-    background-image: url(''); 
+    background-image: url('../assets/images/nav4.png'); 
 }
 
 .box5 {
-    background-image: url(''); 
+    background-image: url('../assets/images/nav5.png'); 
 }
 
 .box6 {
-    background-image: url(''); 
+    background-image: url('../assets/images/nav6.png'); 
+}
+
+
+/*homepage boxes hover effect */
+.group:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.group .absolute {
+    transition: all 0.3s ease-in-out;
+}
+
+/* text hover effect - size increase and "glow" effect"*/
+.group:hover .absolute {
+    background-color: rgba(0, 0, 0, 0.4);
+    font-size: 1.5rem;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8),
+                 0 0 30px rgba(255, 255, 255, 0.6),
+                 0 0 45px rgba(255, 255, 255, 0.4);
 }
