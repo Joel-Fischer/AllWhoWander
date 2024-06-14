@@ -39,7 +39,7 @@
 /*site pages banner image*/
 
 .page-banner {
-    background-image: url('assets/images/pagetitle-banner.png');
+    background-image: url('/assets/images/pagetitle-banner.png');
 }
 
 
