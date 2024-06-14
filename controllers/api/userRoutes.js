@@ -34,7 +34,7 @@ router.get('/:id', withAuth, async (req, res) => {
       const users = userData.map((user) => user.get({ plain: true }));
       console.log(users);
       
-      if (!users){
+      if (users.length==0){
           res.status(404).json({ message: 'No user found with this id!' });
           return;
       }

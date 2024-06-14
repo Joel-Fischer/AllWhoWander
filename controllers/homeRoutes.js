@@ -73,4 +73,52 @@ router.get('/register', (req, res) => {
 
 });
 
+router.get('/addLocation', (req, res) => {
+
+  res.render('addLocation');
+
+});
+
+router.get('/createActivity', (req, res) => {
+
+  res.render('createActivity');
+
+});
+
+router.get('/dashboard', (req, res) => {
+
+  res.render('dashboard');
+
+});
+
+router.get('/Location', (req, res) => {
+
+  res.render('Location');
+
+});
+
+router.get('/planTrip', (req, res) => {
+
+  res.render('planTrip');
+
+});
+
+router.get('/savedTrips', (req, res) => {
+
+  res.render('savedTrips');
+
+});
+
+router.get('/viewActivity', (req, res) => {
+
+  res.render('viewActivity');
+
+});
+
+router.get('/viewAllLocations', (req, res) => {
+
+  res.render('viewAllLocations');
+
+});
+
 module.exports = router;

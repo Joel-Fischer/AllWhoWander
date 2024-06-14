@@ -15,7 +15,7 @@ Trip
   has activities
 
 Location
-  belongs to trips
+  belongs to trips - maybe remove this 
   has activities
 
 Activity
