@@ -6,11 +6,7 @@
     box-sizing: border-box;
 }
 
-/*homepage images*/
-
-.bg-banner {
-    background-image: url('/assets/images/banner.jpg');
-}
+/*nav images*/
 
 .box1 {
     background-image: url('/assets/images/nav1.png'); 
@@ -43,7 +39,7 @@
 }
 
 
-/*homepage hover*/
+/*dashboard hover*/
 .group:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -54,11 +50,60 @@
     transition: all 0.3s ease-in-out;
 }
 
-/*homepage hover - text*/
+/*dashboard hover - text*/
 .group:hover .absolute {
     background-color: rgba(0, 0, 0, 0.4); 
     font-size: 1.5rem;
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.8),
                  0 0 30px rgba(255, 255, 255, 0.6),
                  0 0 45px rgba(255, 255, 255, 0.4);
+}
+
+
+/*homepage styles*/
+.background-image {
+    background-image: url('/assets/images/allwhowander1.jpg');
+    background-size: cover;
+    background-position: 0 70px;
+
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #97d397,  #70a7cc);
+    /*aria accessbility*/
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.content-container {
+    background-color: rgba(64, 58, 48, 0.8); 
+    padding: 2rem;
+    border-radius: 0.5rem;
+    color: #fff;
+}
+
+.content-container h1 {
+    color: #fff;
+}
+
+.content-container p {
+    color: #ddd;
+}
+
+.button-primary {
+    background-color: #1D4ED8; 
+    color: white;
+}
+
+.button-secondary {
+    background-color: #4B5563; 
+    color: white;
+}
+
+.button-primary:hover {
+    background-color: #2563EB; 
+}
+
+.button-secondary:hover {
+    background-color: #6B7280; 
 }
