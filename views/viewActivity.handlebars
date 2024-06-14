@@ -1,21 +1,28 @@
     <main class="flex-1 bg-ivory p-8">
-        <div class="bg-softWhite p-4 rounded-lg shadow-lg mb-8 text-center">
-            <h2 id="location-name" class="text-2xl font-bold text-charcoal">Location Name Placeholder</h2>
-        </div>
-        <h1 class="text-3xl font-bold mb-4">Activity Name</h1>
-        
-        <div class="mb-4">
-            <h2 class="text-2xl font-bold mb-2">Activity Description</h2>
-            <p id="activity-description" class="p-2 border border-chocolateBrown rounded bg-softWhite">This is where the activity description will be displayed. It will be populated from the back-end with the specific activity details.</p>
-        </div>
-        
-        <div class="mb-4">
-            <h2 class="text-2xl font-bold mb-2">Images</h2>
-            <div id="activity-images" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <!-- Placeholder for activity images -->
-                <div class="w-full h-48 border border-chocolateBrown rounded-lg flex items-center justify-center bg-softWhite">Image 1</div>
-                <div class="w-full h-48 border border-chocolateBrown rounded-lg flex items-center justify-center bg-softWhite">Image 2</div>
-                <div class="w-full h-48 border border-chocolateBrown rounded-lg flex items-center justify-center bg-softWhite">Image 3</div>
+        <div class="flex items-center justify-center mb-10">
+            <div class="relative page-banner bg-cover bg-center h-48 w-full max-w-4xl rounded-lg shadow-lg">
+                <div class="absolute inset-0 bg-black bg-opacity-25 rounded-lg"></div>
+                <h2 class="relative z-10 text-5xl font-bold text-white drop-shadow-xl text-center flex items-center justify-center h-full">Activity Name Placeholder</h2>
             </div>
         </div>
+        
+        <div class="mb-8 flex justify-center">
+            <div class="w-full md:w-3/4 lg:w-2/3 xl:w-3/4">
+                <h2 class="text-2xl font-bold mb-2 text-center">Activity Description</h2>
+                <p id="activity-description" class="p-2 border border-chocolateBrown rounded bg-softWhite">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, eum. Sapiente dicta suscipit nostrum voluptatibus, libero sint corrupti omnis cumque, cum nobis praesentium neque vel obcaecati quis itaque ut quia! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia quisquam corporis quis consectetur perspiciatis beatae recusandae aperiam assumenda vero ea, possimus culpa dolorem illo molestiae. Neque maxime non ad excepturi.</p>
+            </div>
+        </div>
+        
+        <div class="mb-4">
+            <h2 class="text-2xl font-bold mb-2 text-center">Image Gallery</h2>
+            <div id="activity-images" class="flex flex-wrap justify-center gap-4">
+                {{#each images}}
+                <div class="w-64 h-64 border border-chocolateBrown rounded-lg flex items-center justify-center bg-softWhite">
+                    <img src="{{this.imageUrl}}" alt="Activity Image" class="w-full h-full object-cover rounded-lg">
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        
+        
     </main>

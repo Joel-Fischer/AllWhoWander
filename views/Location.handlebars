@@ -1,0 +1,41 @@
+    <main class="flex-1 bg-ivory p-8">
+        <div class="flex items-center justify-center mb-8">
+            <div class="relative page-banner bg-cover bg-center h-48 w-full max-w-4xl rounded-lg shadow-lg">
+                <div class="absolute inset-0 bg-black bg-opacity-25 rounded-lg"></div>
+                <h2 class="relative z-10 text-5xl font-bold text-white drop-shadow-xl text-center flex items-center justify-center h-full">Location Name Here</h2>
+            </div>
+        </div>
+        
+        <div class="mb-8 flex justify-center">
+            <div class="w-full md:w-3/4 lg:w-2/3 xl:w-3/4">
+                <h2 class="text-2xl font-bold mb-2 text-center">Location Description</h2>
+                <p id="activity-description" class="p-2 border border-chocolateBrown rounded bg-softWhite">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, eum. Sapiente dicta suscipit nostrum voluptatibus, libero sint corrupti omnis cumque, cum nobis praesentium neque vel obcaecati quis itaque ut quia! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia quisquam corporis quis consectetur perspiciatis beatae recusandae aperiam assumenda vero ea, possimus culpa dolorem illo molestiae. Neque maxime non ad excepturi.</p>
+            </div>
+        </div>
+    
+        <h2 class="text-2xl font-bold mb-2 text-center">Suggested Activities</h2>
+    
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto max-w-6xl">
+            <!--Activity population card snippet -->
+            {{#each activities}}
+            <div class="max-w-md rounded overflow-hidden shadow-lg mx-auto bg-softWhite border border-chocolateBrown flex">
+                <div class="flex items-center justify-center w-2/5">
+                    <img class="w-32 h-32 object-cover rounded-lg" src="{{this.imageUrl}}" alt="Activity Image">
+                </div>
+                <div class="w-3/5 p-4">
+                    <div class="font-bold text-xl mb-2 text-charcoal" id="activity-name">{{this.name}}</div>
+                    <p class="text-charcoal text-base" id="activity-description">
+                        {{this.description}}
+                    </p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    
+        <div class="flex justify-center mt-8">
+            <a href="add_activity.html" class="w-1/2 bg-oceanBlue text-white text-center py-4 rounded-lg shadow-lg hover:bg-goldenYellow transition">
+                Add Activity to this location
+            </a>
+        </div>
+
+    </main>
