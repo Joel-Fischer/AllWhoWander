@@ -1,0 +1,55 @@
+<main class="flex-1 bg-ivory p-8">
+    <!-- Banner Section -->
+    <div class="flex items-center justify-center mb-8">
+        <div class="relative page-banner bg-cover bg-center h-48 w-full max-w-4xl rounded-lg shadow-lg">
+            <div class="absolute inset-0 bg-black bg-opacity-25 rounded-lg"></div>
+            <h2 class="relative z-10 text-5xl font-bold text-white drop-shadow-xl text-center flex items-center justify-center h-full">{{tripName}}</h2>
+        </div>
+    </div>
+
+    <!-- Trip Description Section -->
+    <div class="mb-8 flex justify-center">
+        <div class="w-full md:w-3/4 lg:w-2/3 xl:w-3/4">
+            <h2 class="text-2xl font-bold mb-2 text-center">Trip Description</h2>
+            <p id="trip-description" class="p-2 border border-chocolateBrown rounded bg-softWhite">{{tripDescription}}</p>
+        </div>
+    </div>
+
+    <!-- Calendar/Table Section -->
+    <div class="mb-8 flex justify-center">
+        <div class="w-full md:w-3/4 lg:w-2/3 xl:w-3/4">
+            <h2 class="text-2xl font-bold mb-4 text-center">Itinerary</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full border-collapse border border-chocolateBrown">
+                    <thead>
+                        <tr>
+                            <th class="border border-chocolateBrown px-4 py-2 bg-softWhite">Date</th>
+                            <th class="border border-chocolateBrown px-4 py-2 bg-softWhite">Activities</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each itinerary}}
+                        <tr>
+                            <td class="border border-chocolateBrown px-4 py-2 bg-softWhite">{{this.date}}</td>
+                            <td class="border border-chocolateBrown px-4 py-2 bg-softWhite">
+                                <ul class="list-disc list-inside">
+                                    {{#each this.activities}}
+                                    <li><a href="{{this.url}}" class="text-oceanBlue">{{this.name}}</a></li>
+                                    {{/each}}
+                                </ul>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Activity Button -->
+    <div class="flex justify-center mt-8">
+        <a href="/add_activity/{{tripId}}" class="w-1/2 bg-oceanBlue text-white text-center py-4 rounded-lg shadow-lg hover:bg-goldenYellow transition">
+            Add Activity to this Trip
+        </a>
+    </div>
+</main>
