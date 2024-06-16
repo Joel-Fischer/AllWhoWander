@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Trip, Location, Activity } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Get all users
@@ -21,14 +21,38 @@ router.get('/:id', withAuth, async (req, res) => {
   try {
       console.log(req.params.id)    ;
 
-      // const userData = await User.findByPK(req.params.id);
+      // const userData = await User.findByPK({
+      //   where: {
+      //     id: req.params.id
+      //   },
+      //   include: [{
+      //     model: Trip,
+      //     include: [{
+      //       model: Location, 
+      //       include: [{
+      //         model: Activity,
+      //       }]
+      //     }]
+      //   }],
+      // });
+
       // console.log(userData);
 
       const userData = await User.findAll({
         where: {
           id: req.params.id
-        }
+        },
+        include: [{
+          model: Trip,
+          include: [{
+            model: Location, 
+            include: [{
+              model: Activity,
+            }]
+          }]
+        }],
       });
+
       console.log(userData);
 
       const users = userData.map((user) => user.get({ plain: true }));

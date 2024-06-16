@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    res.render('homepage', { 
+    res.render('dashboard', { 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -59,7 +59,7 @@ router.get('/', async (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/homepage');
+    res.redirect('/dashboard');
     return;
   }
 

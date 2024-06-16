@@ -49,7 +49,6 @@ router.post('/', withAuth, async (req, res) => {
     try {
         const newActivity = await Activity.create({
             ...req.body,
-            user_id: req.session.user_id,
         });
 
         res.status(200).json(newActivity);

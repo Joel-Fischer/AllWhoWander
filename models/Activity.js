@@ -21,20 +21,20 @@ Activity.init(
         pic_url: {
             type: DataTypes.STRING,
         },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'id',
-            },
-        },
-        trip_id: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: 'trip',
-              key: 'id',
-            },
-        },
+        // user_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'user',
+        //         key: 'id',
+        //     },
+        // },
+        // trip_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //       model: 'trip',
+        //       key: 'id',
+        //     },
+        // },
         location_id: {
             type: DataTypes.INTEGER,
             references: {
