@@ -58,10 +58,10 @@ router.get('/planTrip', (req, res) => {
   
 });
 
-router.get('/savedTrips', (req, res) => {
-  
+router.get('/savedTrips', withAuth, async (req, res) => {
+
   res.render('savedTrips');
-  
+
 });
 
 router.get('/viewActivity', (req, res) => {

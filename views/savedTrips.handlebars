@@ -8,13 +8,13 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto max-w-7xl">
             <!-- Card snippet for trips data set -->
-            {{#each trips}}
-            <div class="max-w-sm rounded overflow-hidden shadow-lg mx-auto bg-softWhite border border-chocolateBrown cursor-pointer" onclick="location.href='/trip/{{this.id}}'">
-                <img class="w-full h-48 object-cover" src="{{this.thumbnailUrl}}" alt="Trip Cover Image">
+            {{#each trips as |trip|}}
+            <div class="max-w-sm rounded overflow-hidden shadow-lg mx-auto bg-softWhite border border-chocolateBrown cursor-pointer" onclick="location.href='/trip/{{trip.id}}'">
+                <img class="w-full h-48 object-cover" src="{{trip.thumbnailUrl}}" alt="Trip Cover Image">
                 <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2 text-charcoal">{{this.name}}</div>
+                    <div class="font-bold text-xl mb-2 text-charcoal">{{trip.name}}</div>
                     <p class="text-charcoal text-base">
-                        {{this.startDate}} - {{this.endDate}}
+                        {{trip.startDate}} - {{trip.endDate}}
                     </p>
                 </div>
             </div>
@@ -22,9 +22,10 @@
         </div>
         
         <div class="flex justify-center mt-8">
-            <a href="add_trip.html" class="w-1/2 bg-oceanBlue text-white text-center py-4 rounded-lg shadow-lg hover:bg-goldenYellow transition">
+            <a id="add_trip_btn"class="w-1/2 bg-oceanBlue text-white text-center py-4 rounded-lg shadow-lg hover:bg-goldenYellow transition">
                 Add New Trip
             </a>
         </div>
     </main>
     
+    <script src="/js/savedTrips.js"></script>
