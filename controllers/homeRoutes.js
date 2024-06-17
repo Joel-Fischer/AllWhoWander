@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Trip, Location, Activity, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -58,16 +58,93 @@ router.get('/planTrip', (req, res) => {
   
 });
 
-router.get('/savedTrips', (req, res) => {
-  
-  res.render('savedTrips');
-  
+router.get('/savedTrips', withAuth, async (req, res) => {
+  try {
+    const tripData = await Trip.findAll({
+        where: {
+            user_id: req.session.user_id,
+        },
+    });
+
+    const trips = tripData.map((trip) => trip.get({ plain: true }));
+    console.log(trips);
+
+    res.render('savedTrips', {trips});
+
+  } catch (err) {
+      res.status(400).json(err);
+  }
 });
 
 router.get('/viewActivity', (req, res) => {
   
   res.render('viewActivity');
   
+});
+
+router.get('/trip/:id', withAuth, async (req, res) => {
+
+  console.log(req.params.id);
+
+  try {
+    // const tripData = await Trip.findByPK(parseInt(req.params.id));
+    const tripData = await Trip.findOne({
+      where: 
+      {
+        id: req.params.id
+      },
+      include: [{
+        model: Location
+      }]
+    });
+
+    if (!tripData){
+        res.status(404).json({ message: 'No trip found with this id!' });
+        return;
+    };
+
+    const trip = tripData.get({ plain: true });
+
+    console.log(trip);
+
+    res.render('Trip', {trip});
+
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
+router.get('/location/:id', withAuth, async (req, res) => {
+
+  console.log(req.params.id);
+
+  try {
+    const locationData = await Location.findOne({
+      where: 
+      {
+        id: req.params.id
+      },
+      include: [{
+        model: Activity
+      }]
+    });
+
+    if (!locationData){
+        res.status(404).json({ message: 'No location found with this id!' });
+        return;
+    };
+
+    const location = locationData.get({ plain: true });
+
+    console.log(location);
+
+    res.render('Location', {location});
+
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
 });
 
 module.exports = router;
