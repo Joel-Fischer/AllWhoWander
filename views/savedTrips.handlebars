@@ -10,12 +10,12 @@
             <!-- Card snippet for trips data set -->
             {{#each trips as |trip|}}
             <div class="max-w-sm rounded overflow-hidden shadow-lg mx-auto bg-softWhite border border-chocolateBrown cursor-pointer" onclick="location.href='/trip/{{trip.id}}'">
-                <img class="w-full h-48 object-cover" src="{{trip.thumbnailUrl}}" alt="Trip Cover Image">
+                {{!-- <img class="w-full h-48 object-cover" src="{{trip.thumbnailUrl}}" alt="Trip Cover Image"> --}}
                 <div class="px-6 py-4">
                     <div class="font-bold text-xl mb-2 text-charcoal">{{trip.name}}</div>
-                    <p class="text-charcoal text-base">
+                    {{!-- <p class="text-charcoal text-base">
                         {{trip.startDate}} - {{trip.endDate}}
-                    </p>
+                    </p> --}}
                 </div>
             </div>
             {{/each}}

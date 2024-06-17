@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, DATE } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Location extends Model {}
@@ -16,6 +16,9 @@ Location.init(
             allowNull: false,
         },
         description: {
+            type: DataTypes.STRING,
+        },
+        date: {
             type: DataTypes.STRING,
         },
         trip_id: {
