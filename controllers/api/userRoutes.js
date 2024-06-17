@@ -19,26 +19,7 @@ router.get('/', withAuth, async (req, res) => {
 // Get a specific user 
 router.get('/:id', withAuth, async (req, res) => {
   try {
-      console.log(req.params.id)    ;
-
-      // const userData = await User.findByPK({
-      //   where: {
-      //     id: req.params.id
-      //   },
-      //   include: [{
-      //     model: Trip,
-      //     include: [{
-      //       model: Location, 
-      //       include: [{
-      //         model: Activity,
-      //       }]
-      //     }]
-      //   }],
-      // });
-
-      // console.log(userData);
-
-      const userData = await User.findAll({
+        const userData = await User.findAll({
         where: {
           id: req.params.id
         },
@@ -53,10 +34,7 @@ router.get('/:id', withAuth, async (req, res) => {
         }],
       });
 
-      console.log(userData);
-
       const users = userData.map((user) => user.get({ plain: true }));
-      console.log(users);
       
       if (users.length==0){
           res.status(404).json({ message: 'No user found with this id!' });

@@ -2,7 +2,6 @@ const User = require('./User');
 const Trip = require('./Trip');
 const Location = require('./Location');
 const Activity = require('./Activity');
-const Junction = require('./Junction');
 
 /* 
 User
