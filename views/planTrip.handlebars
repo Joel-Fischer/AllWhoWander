@@ -1,37 +1,52 @@
-   <!-- main content -->
-    <main class="flex-1 bg-ivory p-8">
-        <h1 class="text-3xl font-bold mb-4">Plan Your Adventure</h1>
-        
-        <!-- Trip planning content goes here -->
-        <form>
-            <div class="mb-4">
-                <label for="destination" class="block text-charcoal mb-2">Destination</label>
-                <input type="text" id="destination" class="w-full p-2 border border-chocolateBrown rounded" placeholder="Enter your destination">
+    <main class="flex-1 bg-ivory p-8 flex flex-col items-center">
+        <div class="flex items-center justify-center mb-8 w-full">
+            <div class="relative page-banner bg-cover bg-center h-48 w-full max-w-4xl rounded-lg shadow-lg">
+                <div class="absolute inset-0 bg-black bg-opacity-25 rounded-lg"></div>
+                <h2 class="relative z-10 text-5xl font-bold text-white drop-shadow-xl text-center flex items-center justify-center h-full">Plan Your Adventure</h2>
             </div>
-            <div class="mb-4">
-                <label class="block text-charcoal mb-2">Select Dates</label>
-                <div class="flex items-center justify-between space-x-4">
-                    <div class="relative flex-1">
-                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                            <svg class="w-4 h-4 text-charcoal" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-                            </svg>
+        </div>
+    
+        <div class="w-full max-w-lg bg-softWhite p-4 rounded-lg shadow-lg">
+            <h1 class="text-3xl font-bold mb-4 text-center">Plan Your Adventure</h1>
+    
+            <form id="plan-trip-form">
+                <div class="mb-4">
+                    <label for="trip-name" class="block text-charcoal mb-2">Trip Name</label>
+                    <input type="text" id="trip-name" class="w-full p-2 border border-chocolateBrown rounded" placeholder="Enter your trip name">
+                </div>
+                <div class="mb-4">
+                    <label for="destination" class="block text-charcoal mb-2">Destination</label>
+                    <input type="text" id="destination" class="w-full p-2 border border-chocolateBrown rounded" placeholder="Enter your destination">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-charcoal mb-2">Select Dates</label>
+                    <div class="flex items-center justify-between space-x-4">
+                        <div class="relative flex-1">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                <svg class="w-4 h-4 text-charcoal" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                                </svg>
+                            </div>
+                            <input id="start-date" datepicker datepicker-autohide name="start" type="text" class="bg-softWhite border border-chocolateBrown text-charcoal text-sm rounded-lg focus:ring-goldenYellow focus:border-goldenYellow block w-full ps-10 p-2.5 datepicker-input" placeholder="Select date start">
                         </div>
-                        <input id="start-date" datepicker datepicker-autohide name="start" type="text" class="bg-softWhite border border-chocolateBrown text-charcoal text-sm rounded-lg focus:ring-goldenYellow focus:border-goldenYellow block w-full ps-10 p-2.5 datepicker-input" placeholder="Select date start">
-                    </div>
-                    <span class="mx-4 text-charcoal">to</span>
-                    <div class="relative flex-1">
-                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                            <svg class="w-4 h-4 text-charcoal" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-                            </svg>
+                        <span class="mx-4 text-charcoal">to</span>
+                        <div class="relative flex-1">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                <svg class="w-4 h-4 text-charcoal" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                                </svg>
+                            </div>
+                            <input id="end-date" datepicker datepicker-autohide name="end" type="text" class="bg-softWhite border border-chocolateBrown text-charcoal text-sm rounded-lg focus:ring-goldenYellow focus:border-goldenYellow block w-full ps-10 p-2.5 datepicker-input" placeholder="Select date end">
                         </div>
-                        <input id="end-date" datepicker datepicker-autohide name="end" type="text" class="bg-softWhite border border-chocolateBrown text-charcoal text-sm rounded-lg focus:ring-goldenYellow focus:border-goldenYellow block w-full ps-10 p-2.5 datepicker-input" placeholder="Select date end">
                     </div>
                 </div>
-            </div>
-            <button type="submit" class="w-full bg-oceanBlue text-white p-2 rounded hover:bg-goldenYellow transition">Create Trip</button>
-        </form>
+                <div class="mb-4 p-4 border border-chocolateBrown rounded-lg">
+                    <label for="trip-cover-image" class="block text-charcoal mb-2">Trip Cover Image</label>
+                    <div id="image-upload-placeholder" class="w-full h-48 border border-dashed border-charcoal flex items-center justify-center rounded-lg">Image Upload Widget Placeholder</div>
+                </div>
+                <button type="submit" class="w-full bg-oceanBlue text-white p-2 rounded hover:bg-goldenYellow transition">Create Trip</button>
+            </form>
+        </div>
     </main>
 
 
