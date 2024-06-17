@@ -49,7 +49,7 @@ router.post('/', withAuth, async (req, res) => {
         const newTrip = await Trip.create({
             ...req.body,
             user_id: req.session.user_id,
-        });
+        });``
 
         console.log(newTrip);
 

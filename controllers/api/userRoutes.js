@@ -17,11 +17,11 @@ router.get('/', withAuth, async (req, res) => {
 })
 
 // Get a specific user 
-router.get('/:id', withAuth, async (req, res) => {
+router.get('/me', withAuth, async (req, res) => {
   try {
         const userData = await User.findAll({
         where: {
-          id: req.params.id
+          id: req.session.user_id
         },
         include: [{
           model: Trip,

@@ -1,5 +1,4 @@
 const loginFormHandler = async (event) => {
-  debugger;
   event.preventDefault();
 
   // Collect values from the login form
