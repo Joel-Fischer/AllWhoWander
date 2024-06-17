@@ -18,22 +18,8 @@ Activity.init(
         description: {
             type: DataTypes.TEXT,
         },
-        pic_url: {
+        image_URL: {
             type: DataTypes.STRING,
-        },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'id',
-            },
-        },
-        trip_id: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: 'trip',
-              key: 'id',
-            },
         },
         location_id: {
             type: DataTypes.INTEGER,
