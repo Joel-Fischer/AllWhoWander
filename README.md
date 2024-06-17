@@ -1,46 +1,55 @@
-# ALllWhoWander
+# All Who Wander
 
-Removed withAuth from api routes in order to test them 
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
-routes: 
+## Description
+A travel diary application where one can document their trip, add photos and what activity they did on their adventure!
 
-    home routes:
-        homepage
+## Table of Contents
+- [Installation](#installation)
+- [License](#license)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [Credits](#credits)
+
+## Installation
+To run this application, you will need to have [Node.js](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed.
+
+1. **Clone the repo**
+    ```bash
+    git clone https://github.com/Joel-Fischer/AllWhoWander/
+&nbsp;
+
+2. **Install required dependencies**
+    ```bash
+    npm install
+&nbsp;
+
+3. **Set up environment variables**
+    ```bash
+    .env
+&nbsp;
+
+4. **Run the application**
+    ```bash
+    npm start
+&nbsp;
 
 
-    user / profile routes:
-        login 
-        logout
-        
+## License
+This project is licensed under the MIT license.
 
-    search routes:
-        activities (posts & pictures) by user
-        activities (posts & pictures) by location
 
-    diary routes:
-        generate diary by trip 
-        share
+## Deployment
+Here is a link to our deployed [website](https://allwhowander.onrender.com).
 
-    api user routes:
-        create
-        delete
-        login
-        logout
-    
-    api trip routes:
-        create
-        read
-        update
-        delete
-    
-    api location routes: 
-        create
-        read
-        update
-        delete
-    
-    api activity routes:
-        create
-        read
-        update
-        delete
+
+## Contributing
+[Joel-Fischer](https://github.com/Joel-Fischer)
+[macbetthh](https://github.com/macbetthh)
+[thaihtran](https://github.com/thaihtran)
+
+
+## Credits
+[Inkarnate](https://inkarnate.com/)
+[Cloudinary](https://cloudinary.com/)
