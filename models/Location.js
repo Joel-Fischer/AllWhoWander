@@ -16,7 +16,7 @@ Location.init(
             allowNull: false,
         },
         description: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
         },
         trip_id: {
             type: DataTypes.INTEGER,

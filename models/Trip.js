@@ -16,7 +16,7 @@ Trip.init(
             allowNull: false,
         },
         description: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
         },
         user_id: {
             type: DataTypes.INTEGER,
