@@ -45,11 +45,11 @@ Here is a link to our deployed [website](https://allwhowander.onrender.com).
 
 
 ## Contributing
-[Joel-Fischer](https://github.com/Joel-Fischer)
-[macbetthh](https://github.com/macbetthh)
-[thaihtran](https://github.com/thaihtran)
+- [Joel-Fischer](https://github.com/Joel-Fischer)
+- [macbetthh](https://github.com/macbetthh)
+- [thaihtran](https://github.com/thaihtran)
 
 
 ## Credits
-[Inkarnate](https://inkarnate.com/)
-[Cloudinary](https://cloudinary.com/)
+- [Inkarnate](https://inkarnate.com/)
+- [Cloudinary](https://cloudinary.com/)
